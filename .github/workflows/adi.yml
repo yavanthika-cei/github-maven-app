@@ -10,8 +10,7 @@ env:
 jobs:
   build_maven_project:
     runs-on:
-      - self-hosted
-      - tag-1
+      - ubuntu-latest
     container:
       image: maven:3.9.8-eclipse-temurin-17
     timeout-minutes: 60
