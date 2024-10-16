@@ -1,0 +1,30 @@
+name: Perform Operation Based on Input
+
+on:
+  workflow_call:
+    inputs:
+      parameter1:
+        description: 'Input parameter 1'
+        required: true
+        type: string
+      parameter2:
+        description: 'Input parameter 2'
+        required: true
+        type: string
+
+jobs:
+  execute-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Use Input Parameters
+        run: |
+          echo "Parameter 1: ${{ inputs.parameter1 }}"
+          echo "Parameter 2: ${{ inputs.parameter2 }}"
+          
+      - name: Perform Operation
+        run: |
+          # Add your custom operations here
+          echo "Running task with inputs: ${{ inputs.parameter1 }} and ${{ inputs.parameter2 }}"
